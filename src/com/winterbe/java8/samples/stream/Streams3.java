@@ -10,6 +10,12 @@ import java.util.concurrent.TimeUnit;
  */
 public class Streams3 {
 
+        /*
+        스트림에 여러 개의 쓰레드를 써서 병행적으로 수행할 수 있다.
+        parallel stream 의 장점은 잘 구현한다면 성능을 높일 수 있다.
+        */
+
+    // 먼저 정말 긴 리스트를 만들어보자.
     public static final int MAX = 1000000;
 
     public static void sortSequential() {
@@ -19,7 +25,7 @@ public class Streams3 {
             values.add(uuid.toString());
         }
 
-        // sequential
+        // Sequential Sort 의 경우
 
         long t0 = System.nanoTime();
 
@@ -39,7 +45,7 @@ public class Streams3 {
             values.add(uuid.toString());
         }
 
-        // sequential
+        // Parallel Sort 의 경우
 
         long t0 = System.nanoTime();
 
